@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(BusinessCard());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BusinessCard extends StatelessWidget {
+  BusinessCard({super.key});
 
-  // This widget is the root of your application.
+  final Uri linkedinURL = Uri.parse(
+    'https://www.linkedin.com/in/mahmoud-adel-abdella/',
+  );
+  final Uri websiteURL = Uri.parse('https://mahmoudadelabdella.xyz/');
+
+  Future<void> _launchUrl(url) async {
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,86 +31,180 @@ class MyApp extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('Background Image.png'),
+                  image: AssetImage('assets/photos/Background Image.png'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Center(
               child: Container(
-                  width: 358,
-                  height: 700,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.white.withOpacity(0.3)
-                    ),
+                width: 370,
+                height: 690,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white.withOpacity(0.3)),
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.15),
                       blurRadius: 20,
-                      offset: Offset(0, 8)
+                      offset: Offset(0, 8),
                     ),
-                  ]
-                  ),
+                  ],
+                ),
                 child: BlurryContainer(
-                  width: 358,
-                  height: 700,
+                  padding: EdgeInsets.zero,
+                  color: Color.fromARGB(55, 36, 49, 58),
                   blur: 4,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  child: Column(
+                  child: Stack(
                     children: [
-                      CircleAvatar(
-                        radius: 80,
-                        backgroundColor: Colors.white ,
-                        child: CircleAvatar(
-                          foregroundImage: AssetImage('Mahmoud.jpg'),
-                          radius: 75,
-                        )
+                      Container(
+                        width: double.infinity,
+                        height: 128,
+                        color: Color(0x800d9488),
                       ),
-                      Text(
-                        'Mahmoud Adel',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
-                        ),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 44, bottom: 15),
+                            child: CircleAvatar(
+                              radius: 80,
+                              backgroundColor: Colors.white,
+                              child: CircleAvatar(
+                                radius: 75,
+                                foregroundImage: AssetImage(
+                                  'assets/photos/Mahmoud.jpg',
+                                ),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Mahmoud Adel Abdella',
+                            style: TextStyle(
+                              fontSize: 28,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            'QA & Flutter Developer',
+                            style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.white
+                            ),
+                          ),
+                          Text(
+                            'QA Automation & Workflow Services',
+                            style: TextStyle(
+                              fontSize: 19,
+                              color: Colors.white.withOpacity(0.6),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            child: Divider(
+                              color: Color.fromARGB(17, 255, 255, 255),
+                              endIndent: 40,
+                              indent: 40,
+                              thickness: 2,
+                            ),
+                          ),
+                          ListTile(
+                            dense: true,
+                            leading: SvgPicture.asset(
+                              'assets/icons/Phone.svg',
+                              fit: BoxFit.cover,
+                            ),
+                            title: Text(
+                              'Phone',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.6),
+                                fontSize: 16,
+                              ),
+                            ),
+                            subtitle: Text(
+                              '+201080798036',
+                              style: TextStyle(color: Colors.white, fontSize: 17),
+                            ),
+                          ),
+                          ListTile(
+                            dense: true,
+                            leading: SvgPicture.asset(
+                              'assets/icons/Email.svg',
+                              fit: BoxFit.cover,
+                            ),
+                            title: Text(
+                              'Email',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.6),
+                                fontSize: 16,
+                              ),
+                            ),
+                            subtitle: Text(
+                              'mahmoud@mahmoudadelabdella.xyz',
+                              style: TextStyle(color: Colors.white, fontSize: 14.5),
+                            ),
+                          ),
+                          ListTile(
+                            dense: true,
+                            leading: SvgPicture.asset(
+                              'assets/icons/Overlay+Border.svg',
+                              fit: BoxFit.cover,
+                            ),
+                            title: Text(
+                              'Location',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.6),
+                                fontSize: 16,
+                              ),
+                            ),
+                            subtitle: Text(
+                              'Cairo, Egypt',
+                              style: TextStyle(color: Colors.white, fontSize: 17),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 16),
+                            child: Divider(
+                              color: Color.fromARGB(17, 255, 255, 255),
+                              endIndent: 40,
+                              indent: 40,
+                              thickness: 2,
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 20,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  _launchUrl(linkedinURL);
+                                },
+                                child: Image.asset(
+                                  'assets/icons/Link2.png',
+                                  width: 50,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  _launchUrl(websiteURL);
+                                },
+                                child: Image.asset(
+                                  'assets/icons/Link.png',
+                                  width: 50,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      Text(
-                        'QA & Flutter Developer',
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.8),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 24
-                        ),
-                      ),
-                      Text(
-                        'QA Automation & Workflow Services',
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.7),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 19
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 25),
-                        child: Divider(
-                          color: Colors.white.withOpacity(0.4),
-                          endIndent: 20,
-                          indent: 20,
-                          thickness: 0.5,
-                          radius: BorderRadius.circular(90),
-                        ),
-                      ),
-                      ListTile(
-                        title: Text('phone'),
-                        textColor: Colors.white,
-                      )
                     ],
-                  )
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

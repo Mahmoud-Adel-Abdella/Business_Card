@@ -37,6 +37,11 @@ dependencies:
   blurrycontainer: ^2.1.0
   flutter_svg: ^2.2.3
   url_launcher: ^6.3.2
+  flutter_launcher_icons: ^0.14.4
+
+flutter_icons:
+  android: true
+  image_path: "assets/icons/appIcon.png"
 
 dev_dependencies:
   flutter_test:
