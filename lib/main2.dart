@@ -82,31 +82,31 @@ class BusinessCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 28,
                               color: Colors.white,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                           Text(
                             'QA & Flutter Developer',
                             style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 22,
                               color: Colors.white
                             ),
                           ),
                           Text(
                             'QA Automation & Workflow Services',
                             style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white.withOpacity(0.8),
+                              fontSize: 19,
+                              color: Colors.white.withOpacity(0.6),
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
                             child: Divider(
-                              color: Color.fromARGB(255, 36, 49, 58),
-                              endIndent: 20,
-                              indent: 20,
-                              thickness: 1,
+                              color: Color.fromARGB(17, 255, 255, 255),
+                              endIndent: 40,
+                              indent: 40,
+                              thickness: 2,
                             ),
                           ),
                           ListTile(
@@ -164,12 +164,12 @@ class BusinessCard extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 14),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
                             child: Divider(
-                              color: Color.fromARGB(255, 36, 49, 58),
-                              endIndent: 20,
-                              indent: 20,
-                              thickness: 1,
+                              color: Color.fromARGB(17, 255, 255, 255),
+                              endIndent: 40,
+                              indent: 40,
+                              thickness: 2,
                             ),
                           ),
                           Row(
