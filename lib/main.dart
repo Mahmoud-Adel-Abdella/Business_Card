@@ -42,31 +42,31 @@ class BusinessCard extends StatelessWidget {
                 height: 690,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white.withOpacity(0.3)),
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withOpacity(0.15),
                       blurRadius: 20,
-                      offset: Offset(0, 8),
+                      offset: const Offset(0, 8),
                     ),
                   ],
                 ),
                 child: BlurryContainer(
                   padding: EdgeInsets.zero,
-                  color: Color.fromARGB(55, 36, 49, 58),
+                  color: const Color.fromARGB(55, 36, 49, 58),
                   blur: 4,
                   child: Stack(
                     children: [
                       Container(
                         width: double.infinity,
                         height: 128,
-                        color: Color(0x800d9488),
+                        color: const Color(0x800d9488),
                       ),
                       Column(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 44, bottom: 15),
-                            child: CircleAvatar(
+                            child: const CircleAvatar(
                               radius: 80,
                               backgroundColor: Colors.white,
                               child: CircleAvatar(
@@ -77,7 +77,7 @@ class BusinessCard extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Mahmoud Adel Abdella',
                             style: TextStyle(
                               fontSize: 28,
@@ -85,7 +85,7 @@ class BusinessCard extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          Text(
+                          const Text(
                             'QA & Flutter Developer',
                             style: TextStyle(
                               fontSize: 22,
@@ -100,8 +100,8 @@ class BusinessCard extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 16),
                             child: Divider(
                               color: Color.fromARGB(17, 255, 255, 255),
                               endIndent: 40,
@@ -122,7 +122,7 @@ class BusinessCard extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            subtitle: Text(
+                            subtitle: const Text(
                               '+201080798036',
                               style: TextStyle(color: Colors.white, fontSize: 17),
                             ),
@@ -140,7 +140,7 @@ class BusinessCard extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            subtitle: Text(
+                            subtitle: const Text(
                               'mahmoud@mahmoudadelabdella.xyz',
                               style: TextStyle(color: Colors.white, fontSize: 14.5),
                             ),
@@ -158,13 +158,13 @@ class BusinessCard extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            subtitle: Text(
+                            subtitle:const Text(
                               'Cairo, Egypt',
                               style: TextStyle(color: Colors.white, fontSize: 17),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 16),
                             child: Divider(
                               color: Color.fromARGB(17, 255, 255, 255),
                               endIndent: 40,
